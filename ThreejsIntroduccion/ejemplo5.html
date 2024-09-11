@@ -23,21 +23,51 @@
 			camera.lookAt( new THREE.Vector3() );
 
 			
-			var geometry = new THREE.BoxGeometry( 1/3, 1/3, 1/3 );
-			var material = new THREE.MeshPhongMaterial();
+			geometry = new THREE.BoxGeometry( 1/3, 1/3, 1/3 );
+			material = new THREE.MeshPhongMaterial();
 			
 			for( var x=-1; x<2; x+=2 )
 			for( var y=-1; y<2; y+=2 )
 			for( var z=-1; z<2; z+=2 )
 			{
+                console.log(x + ', ' + y + ', ' + z );
 				var cube = new THREE.Mesh( geometry, material );
 				cube.position.set( x, y, z );
 				scene.add( cube );
 			}
 			
 
+            var material = new THREE.MeshPhongMaterial({color: 'gold'});
+            geometry = new THREE.BoxGeometry(2, 1/7, 1/7);
+
+            for(var y = -1; y<2; y +=2)
+                for(var z = -1; z <2; z+=2){
+                    var beam = new THREE.Mesh(geometry,material);
+                    beam.position.set(0, y, z);
+                    scene.add(beam);
+                }
 		
-		
+
+            geometry = new THREE.BoxGeometry(1/7, 2, 1/7);
+
+            for(var x = -1; x<2; x +=2)
+                for(var z = -1; z <2; z+=2){
+                    var beam = new THREE.Mesh(geometry,material);
+                    beam.position.set(x, 0, z);
+                    scene.add(beam);
+            }
+
+            geometry = new THREE.BoxGeometry(1/7, 1/7, 2);
+
+            for(var x = -1; x<2; x +=2)
+                for(var y = -1; y <2; y+=2){
+                    var beam = new THREE.Mesh(geometry,material);
+                    beam.position.set(x, y, 0);
+                    scene.add(beam);
+            }
+
+
+
 
 			var light = new THREE.PointLight( );
 			light.position.set( 3, 4, 5 );
