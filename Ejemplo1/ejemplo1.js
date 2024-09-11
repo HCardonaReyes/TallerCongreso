@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<style>
+			body { margin: 0; }
+			canvas { width: 100%; height: 100% }
+		</style>
+	</head>
+	<body>
+		<script src="three.min.js"></script>
+		<script>
+        var renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+			var scene = new THREE.Scene();
+			
+			var aspect = window.innerWidth/window.innerHeight;
+			var camera = new THREE.PerspectiveCamera( 30, aspect );
+			camera.position.set( 3, 3, 8 );
+			camera.lookAt( new THREE.Vector3() );
+
+			var geometry = new THREE.BoxGeometry( 2, 2, 2 );
+			var material = new THREE.MeshPhongMaterial();
+			var cube = new THREE.Mesh( geometry, material );
+			scene.add( cube );
+
+			var light = new THREE.PointLight( );
+			light.position.set( 2, 2, 3 );
+			scene.add( light );
+
+			renderer.render( scene, camera );
+        </script>
+    </body>    
+</html>
