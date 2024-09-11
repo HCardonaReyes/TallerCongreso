@@ -27,11 +27,23 @@
 			
 			
 			var geometry = new THREE.BoxGeometry( 0.4, 0.4, 0.4 );
-			var material = new THREE.MeshPhongMaterial();
+			//var material = new THREE.MeshPhongMaterial();
 			
-		
-			var cube = new THREE.Mesh( geometry, material );
-			scene.add( cube );
+			//var cube = new THREE.Mesh( geometry, material );
+			//scene.add( cube );
+
+            for(var i =0; i< N; i++){
+                var x = Math.random() * 8-4;
+                var y = Math.random() * 8-4;
+                var z = Math.random() * 8-4;
+                var material = new THREE.MeshPhongMaterial();
+                var cube = new THREE.Mesh(geometry, material);
+                cube.position.set(x, y, z);
+                var color = new THREE.Color( 0xffffff );
+                color.setHex( Math.random() * 0xffffff );
+                cube.material.color = color;
+                scene.add(cube);
+            }
 
 
 			var light = new THREE.PointLight( );
