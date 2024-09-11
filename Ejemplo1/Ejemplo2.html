@@ -1,4 +1,4 @@
-<html></html>
+<html>
 	<head>
 		<style>
 			body { margin: 0; }
@@ -20,8 +20,8 @@
 			camera.position.set( 3, 3, 8 );
 			camera.lookAt( new THREE.Vector3() );
 
-			var geometry = new THREE.BoxGeometry( 2, 2, 2 );
-			var material = new THREE.MeshPhongMaterial();
+			var geometry = new THREE.BoxGeometry( 2, 1, 4 );
+			var material = new THREE.MeshPhongMaterial({color: 'red'});
 			var cube = new THREE.Mesh( geometry, material );
 			scene.add( cube );
 
