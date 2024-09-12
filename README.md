@@ -1,4 +1,4 @@
-# Taller basico de VR AR MX
+# Taller Introductorio de VR AR MX con ThreeJS
 
 Este taller está diseñado para ofrecer una introducción práctica a las tecnologías más relevantes para el desarrollo de soluciones de Realidad Virtual (VR) y Realidad Aumentada (AR) en plataformas web. A lo largo de esta experiencia, los participantes explorarán las capacidades de **Three.js** y **WebGL**, dos de las herramientas más poderosas y accesibles para la creación de entornos inmersivos y dinámicos que funcionan directamente en navegadores web.
 
