@@ -19,4 +19,6 @@ Al finalizar, los participantes tendrán una comprensión sólida de cómo estas
 https://hiukim.github.io/mind-ar-js-doc/tools/compile/
 - CDNs
   https://cdn.jsdelivr.net/npm/three@0.149.0/
+- Archivos adicionales
+  https://drive.google.com/drive/folders/1iUsyflTFcLw_kMLPJD8V3wJDCSI8k0qx?usp=sharing
 
