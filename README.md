@@ -17,4 +17,6 @@ Al finalizar, los participantes tendrán una comprensión sólida de cómo estas
 - ThreeJS Editor https://threejs.org/editor/
 - MindAR Image Targets Compiler
 https://hiukim.github.io/mind-ar-js-doc/tools/compile/
+- CDNs
+  https://cdn.jsdelivr.net/npm/three@0.149.0/
 
