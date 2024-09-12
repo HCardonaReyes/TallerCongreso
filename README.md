@@ -12,10 +12,8 @@ Los ejemplos presentados en el taller se dividen en tres partes:
 Al finalizar, los participantes tendrán una comprensión sólida de cómo estas herramientas se integran para desarrollar soluciones VR y AR en un entorno web.
 
 
+# Recursos
 
-
-Sitios web de interes para los ejemplos:
-
-MindAR
+- MindAR Image Targets Compiler
 https://hiukim.github.io/mind-ar-js-doc/tools/compile/
 
