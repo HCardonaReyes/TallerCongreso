@@ -13,7 +13,8 @@ Al finalizar, los participantes tendrán una comprensión sólida de cómo estas
 
 
 # Recursos
-
+- Libreria ThreeJS https://threejs.org/
+- ThreeJS Editor https://threejs.org/editor/
 - MindAR Image Targets Compiler
 https://hiukim.github.io/mind-ar-js-doc/tools/compile/
 
