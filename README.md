@@ -13,6 +13,8 @@ Al finalizar, los participantes tendrán una comprensión sólida de cómo estas
 
 
 # Recursos
+- Visual Studio Code https://code.visualstudio.com/
+- Simple Web Server https://simplewebserver.org/
 - Libreria ThreeJS https://threejs.org/
 - ThreeJS Editor https://threejs.org/editor/
 - MindAR Image Targets Compiler
