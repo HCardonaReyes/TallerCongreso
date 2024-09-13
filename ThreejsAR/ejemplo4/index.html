@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script data-consolejs-channel="5755e930-4c76-41e7-6202-8f022ede9e9e" src="https://remotejs.com/agent/agent.js"></script>
+      <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+      <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.147.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.147.0/examples/jsm/",
+            "mindar-image-three":"https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-three.prod.js"
+          }
+        }
+        </script>
+      <style>
+        html, body {position: relative; margin: 0; width: 100%; height: 100%; overflow: hidden}
+        #my-ar-container {
+            height: 300px;
+            width: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+      </style>
+    <script src="./main.js" type="module"></script>
+</head>
+<body>
+
+</body>
+</html>
