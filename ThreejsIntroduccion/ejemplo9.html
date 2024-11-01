@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<style>
+			body { margin: 0; }
+			canvas { width: 100%; height: 100% }
+		</style>
+	</head>
+	<body>
+		<script src="./three.min.js"></script>
+		<script>		
+
+		// Configuración del renderer
+		var renderer = new THREE.WebGLRenderer({antialias:true});
+		renderer.setSize( window.innerWidth, window.innerHeight );
+		renderer.setAnimationLoop( drawFrame );
+		document.body.appendChild( renderer.domElement );
+
+		// Escena y cámara
+		var scene = new THREE.Scene();
+		scene.background = new THREE.Color( 'lightsteelblue' );
+		
+		var aspect = window.innerWidth / window.innerHeight;
+		var camera = new THREE.PerspectiveCamera( 30, aspect );
+		camera.position.set( 0, 4, 20 );
+		camera.lookAt( new THREE.Vector3() );
+
+		// Crear la forma de la calabaza
+		var pumpkinShape = new THREE.Shape();
+		pumpkinShape.moveTo(-2, 0); // Punto inicial en la parte izquierda
+		pumpkinShape.bezierCurveTo(-3, 2, 3, 2, 2, 0); // Curva superior
+		pumpkinShape.bezierCurveTo(3, -2, -3, -2, -2, 0); // Curva inferior cerrando la forma ovalada
+
+		// Crear los ojos de la calabaza
+		var eyeLeft = new THREE.Path();
+		eyeLeft.moveTo(-0.8, 0.5);
+		eyeLeft.lineTo(-0.5, 1);
+		eyeLeft.lineTo(-0.2, 0.5);
+		pumpkinShape.holes.push(eyeLeft); // Ojo izquierdo
+
+		var eyeRight = new THREE.Path();
+		eyeRight.moveTo(0.8, 0.5);
+		eyeRight.lineTo(0.5, 1);
+		eyeRight.lineTo(0.2, 0.5);
+		pumpkinShape.holes.push(eyeRight); // Ojo derecho
+
+		// Crear la boca de la calabaza
+		var mouth = new THREE.Path();
+		mouth.moveTo(-1, -0.5);
+		mouth.lineTo(-0.5, -1);
+		mouth.lineTo(0, -0.7);
+		mouth.lineTo(0.5, -1);
+		mouth.lineTo(1, -0.5);
+		pumpkinShape.holes.push(mouth);
+
+		// Configuraciones de extrusión para dar volumen a la calabaza
+		var extrudeSettings = { depth: 1, bevelEnabled: true, bevelSegments: 2, steps: 2, bevelSize: 0.2, bevelThickness: 0.2 };
+		var geometry = new THREE.ExtrudeGeometry( pumpkinShape, extrudeSettings );
+
+		// Crear el material de la calabaza
+		var pumpkinMaterial = new THREE.MeshPhongMaterial({ color: 0xff8c00, shininess: 100, specular: 'orange' });
+		var pumpkin = new THREE.Mesh( geometry, pumpkinMaterial );
+		scene.add( pumpkin );
+
+		// Luz para resaltar la calabaza
+		var light = new THREE.PointLight( 'white', 0.8 );
+		light.position.set( 5, 5, 10 );
+		scene.add( light );
+
+		// Animación de rotación ligera
+		function drawFrame() {
+			pumpkin.rotation.y += 0.005;
+			pumpkin.rotation.z = 0.1 * Math.sin(5 * pumpkin.rotation.y);
+			renderer.render( scene, camera );
+		}
+
+		// Ajuste de tamaño de la ventana
+		window.addEventListener('resize', () => {
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
+		});
+		
+		</script>
+	</body>
+</html>
